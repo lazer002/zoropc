@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
-
+require('dotenv').config();
 const router=  require('./src/routes/route.js')
 const session = require('express-session')
 const path = require('path')
@@ -29,6 +29,6 @@ app.use(
 
 
 app.use('/',router)
-app.listen(9999,()=>{
+app.listen(process.env.PORT || 4783,()=>{
     console.log('★★★★★★ 9999 ★★★★★★')
 })
